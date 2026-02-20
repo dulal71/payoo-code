@@ -42,34 +42,73 @@
 // })
 
 
-document.getElementById("cashout-btn")
+//with machine
+
+ document.getElementById("cashout-btn")
 .addEventListener("click",function(){
-   const inputNumber = document.getElementById("cashout-number");
-   const cashoutNumber = inputNumber.value;
-   if(cashoutNumber.length !== 11){
-    alert("Invalid Agent Number");
-    return;
-   }
-
-   const inputAmount = document.getElementById("amount");
-   const cashoutAmount = inputAmount.value;
-   
-   const balance = document.getElementById("current-balance");
-   currentBalance = balance.innerText;
-   const newBalance = Number(currentBalance) - Number(cashoutAmount);
+const cashoutNumber = getValueFromInput("cashout-number");
+const cashoutAmount = getValueFromInput("amount");
+const currentBalance = getBalance();
+const newBalance =currentBalance - Number(cashoutAmount);
    if(newBalance < 0){
-    alert("Invalid Amount");
-    return;
-   }
-   console.log(newBalance);
+alert("Invalid Amount");
+   return;
+ }
+ const Pin = getValueFromInput("cashout-pin");
+    if(Pin ==="1234"){
+   alert("cashout successfull");
+   //get history container 
+   const history = document.getElementById("history-container") ;
+    //new div create korbo
+    const newHistory = document.createElement("div");
 
-   const pin = document.getElementById("cashout-pin");
-   const cashoutPin = pin.value;
-   if(cashoutPin ==="1234"){
-    alert("cashout successfull");
-    balance.innerText = newBalance
-
-   }else{
+    //new div innerhtml add korbo
+    newHistory .innerHTML=`
+    <div class="Transaction-card p-5 bg-base-100 ">
+    
+ Casout  ${cashoutAmount}  TAKA success to  ${cashoutNumber}
+ at ${new Date()}
+</div>
+    `;
+     // history container e newdiv append korbo
+    history.appendChild(newHistory);
+setBalance(newBalance);
+}else{
     alert("Invalid Pin");
-   }
+    return;
+  }
 })
+
+//my practics
+// document.getElementById("cashout-btn")
+// .addEventListener("click",function(){
+//    const inputNumber = document.getElementById("cashout-number");
+//    const cashoutNumber = inputNumber.value;
+//    if(cashoutNumber.length !== 11){
+//     alert("Invalid Agent Number");
+//     return;
+//    }
+
+//    const inputAmount = document.getElementById("amount");
+//    const cashoutAmount = inputAmount.value;
+   
+//    const balance = document.getElementById("current-balance");
+// const currentBalance = balance.innerText;
+//    const newBalance = Number(currentBalance) - Number(cashoutAmount);
+//    if(newBalance < 0){
+//     alert("Invalid Amount");
+//     return;
+//    }
+//    console.log(newBalance);
+
+//    const pin = document.getElementById("cashout-pin");
+//    const cashoutPin = pin.value;
+//    if(cashoutPin ==="1234"){
+//     alert("cashout successfull");
+//     balance.innerText = newBalance
+
+//    }else{
+//     alert("Invalid Pin");
+//    }
+// })
+
