@@ -22,7 +22,7 @@ document.getElementById("login-btn")
         
         alert("loging successfull");
         // window.location.replace("/home.html");
-            window.location.assign("./home.html");
+            window.location.assign("home.html");
     }else{
 //3-2 true>> alert > return
         alert("loing failed");

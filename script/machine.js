@@ -28,7 +28,8 @@ function showOnly(id){
     const addMoney = document.getElementById("Add-Money");
     const cashOut = document.getElementById("cashout");
     const Transaction = document.getElementById("history");
-    const transfer = document.getElementById("Transfer-Money");
+    const transfer = document.getElementById("Transfer-Money")
+    const bouns = document.getElementById("Get-bonus");
 // console.log(`add money-${addMoney} , cashout-${cashOut}`);   
 // HTMLElement = HTML ট্যাগের JavaScript অবজেক্ট  
 //getElementById() → HTMLElement দেয়      
@@ -40,6 +41,7 @@ addMoney.classList.add("hidden");
 cashOut.classList.add("hidden");
 Transaction.classList.add("hidden");
 transfer.classList.add("hidden");
+ bouns.classList.add("hidden");
 
  // id wala element ta k tumi dako                                                        
 
