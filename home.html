@@ -59,7 +59,7 @@
       <img src="assets/opt-4.png" alt="add money icon"> 
       <p>Get Bonus</p> 
     </button>
-    <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+    <button onclick="showOnly('pay-bill')" class="btn flex-col h-full py-4 btn-primary btn-soft">
       <img src="assets/opt-5.png" alt="add money icon"> 
       <p>Pay Bill</p> 
     </button>
@@ -95,7 +95,6 @@
         </fieldset>
       </div>
     </div>
-
 </section>
 
 <section id="cashout" class="w-11/12 mx-auto py-1 hidden">
@@ -138,7 +137,7 @@
     </div>
 
 </section>
-
+<!-- bouns -->
 <section id="Get-bonus" class="w-11/12 mx-auto py-1 hidden ">
 <h2 class="text-xl font-bold mb-5">Get Bonus</h2>
 <div class="card bg-base-100 w-full  shadow-xl  rounded-2xl">
@@ -153,8 +152,38 @@
     </div>
 
 </section>
+<!-- pay bill -->
+<section id="pay-bill" class="w-11/12 mx-auto py-1 hidden">
+<h2 class="text-xl font-bold mb-5">Pay Bill</h2>
+<div class="card bg-base-100 w-full  shadow-xl  rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+              <label  id="add-money-bank" class="label text-neutral font-bold ">Select To Pay</label>
+          <select id="add-option" class="select w-full bg-base-200 rounded-full">
+  <option disabled selected>Select back</option>
+  <option value="Internet Bill">Internet Bill</option>
+  <option value="Gas Bill">Gas Bill</option>
+  <option value="Water Bill">Water Bill</option>
+  <option value=" Mobile Postpaid Bill">Mobile Postpaid Bill</option>
+  <option value="College Fee">College Fee</option>
+  <option value="Service Charge">Service Charge</option>
+  <option value="Dish">Dish</option>
+</select>
+<br>
+          <label class="label text-neutral font-bold ">Biller Account Number</label>
+          <input id="biller-account" maxlength="11" minlength="11" type="text" class="input bg-base-200 rounded-full w-full" placeholder="Enter account number"  />
+          <br>
+          <label class="label text-neutral font-bold">Amount to Pay</label>
+          <input id="pay-amount" maxlength="11" minlength="11" type="number" class="input bg-base-200 rounded-full w-full" placeholder="Add Amount to pay"/>
+          <br>
+          <label class="label text-neutral font-bold">Pin Number</label>
+          <input id="pay-money-pin" minlength="5" maxlength="5" type="password" class="input bg-base-200 rounded-full w-full" placeholder="Enter 4 Digit Pin number" />
+          <button id="pay-money-btn" class="btn btn-primary rounded-full mt-4">Add Money</button>
+        </fieldset>
+      </div>
+    </div>
 
-
+</section>
 
 
 
@@ -172,5 +201,6 @@
 <script src="script/addMoney.js"></script>
 <script src="script/transfer.js"></script>
 <script src="script/bouns.js"></script>
+<script src="script/payBill.js"></script>
 </body>
 </html>

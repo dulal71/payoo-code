@@ -24,12 +24,12 @@ balanceElement.innerText= value;
 
 function showOnly(id){
     //get all section
-    console.log("showonly");
     const addMoney = document.getElementById("Add-Money");
     const cashOut = document.getElementById("cashout");
     const Transaction = document.getElementById("history");
     const transfer = document.getElementById("Transfer-Money")
     const bouns = document.getElementById("Get-bonus");
+    const payBills =document.getElementById("pay-bill");
 // console.log(`add money-${addMoney} , cashout-${cashOut}`);   
 // HTMLElement = HTML ট্যাগের JavaScript অবজেক্ট  
 //getElementById() → HTMLElement দেয়      
@@ -42,6 +42,7 @@ cashOut.classList.add("hidden");
 Transaction.classList.add("hidden");
 transfer.classList.add("hidden");
  bouns.classList.add("hidden");
+ payBills.classList.add("hidden");
 
  // id wala element ta k tumi dako                                                        
 
